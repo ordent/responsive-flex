@@ -4,368 +4,860 @@
     <style is="custom-style">
        :host {
         display: block;
+        --var-sm-min: 0px;
         --var-sm-max: 421px;
+        --var-md-min: 422px;
         --var-md-max: 769px;
+        --var-lg-min: 770px;
         --var-lg-max: 1224px;
+        --var-xl-min: 1225px;
         --var-xl-max: 1824px;
       }
-      
+
       .container {
         max-width: 80%;
         margin: 0 auto;
       }
-      
+      /*WIDTH MODIFIER*/
+
+      .container.width-50 {
+        max-width: 50%;
+      }
+
+      .container.width-60 {
+        max-width: 60%;
+      }
+
+      .container.width-70 {
+        max-width: 70%;
+      }
+
+      .container.width-80 {
+        max-width: 80%;
+      }
+
+      .container.width-90 {
+        max-width: 90%;
+      }
+
+      .container.width-100 {
+        max-width: 100%;
+      }
+      /*PADDING MODIFER*/
+
+      .container.padding-10 {
+        padding: 0 10px;
+      }
+
+      .container.padding-20 {
+        padding: 0 20px;
+      }
+
+      .container.padding-30 {
+        padding: 0 30px;
+      }
+
+      .container.padding-40 {
+        padding: 0 40px;
+      }
+
+      .container.padding-50 {
+        padding: 0 50px;
+      }
+
       .row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
       }
-      
-      .responsive-sm-1 {
-        box-sizing: border-box;
-        max-width: calc(100%/12);
-        flex-basis: calc(100%/12);
+
+      .stack {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
       }
-      
-      .responsive-sm-2 {
-        box-sizing: border-box;
-        max-width: calc(100%/6);
-        flex-basis: calc(100%/6);
+
+      .row.reverse {
+        flex-direction: row-reverse;
       }
-      
-      .responsive-sm-3 {
-        box-sizing: border-box;
-        max-width: calc(100%/4);
-        flex-basis: calc(100%/4);
+
+      .stack.reverse {
+        flex-direction: column-reverse;
       }
-      
-      .responsive-sm-4 {
-        box-sizing: border-box;
-        max-width: calc(100%/3);
-        flex-basis: calc(100%/3);
+
+      .space-start {
+        justify-content: flex-start;
       }
-      
-      .responsive-sm-5 {
-        box-sizing: border-box;
-        max-width: calc(calc(100%/3) + calc(100%/12));
-        flex-basis: calc(calc(100%/3) + calc(100%/12));
+
+      .space-end {
+        justify-content: flex-end;
       }
-      
-      .responsive-sm-6 {
-        box-sizing: border-box;
-        max-width: calc(100%/2);
-        flex-basis: calc(100%/2);
+
+      .space-center {
+        justify-content: center;
       }
-      
-      .responsive-sm-7 {
-        box-sizing: border-box;
-        max-width: calc(calc(100%/2) + calc(100%/12));
-        flex-basis: calc(calc(100%/2) + calc(100%/12));
+
+      .space-between {
+        justify-content: space-between;
       }
-      
-      .responsive-sm-8 {
-        box-sizing: border-box;
-        max-width: calc(100% - (100%/3));
-        flex-basis: calc(100% - (100%/3));
+
+      .space-around {
+        justify-content: space-around;
       }
-      
-      .responsive-sm-9 {
-        box-sizing: border-box;
-        max-width: calc(100% - calc(100%/4));
-        flex-basis: calc(100% - calc(100%/4));
-      }
-      
-      .responsive-sm-10 {
-        box-sizing: border-box;
-        max-width: calc(100% - calc(100%/6));
-        flex-basis: calc(100% - calc(100%/6));
-      }
-      
-      .responsive-sm-11 {
-        box-sizing: border-box;
-        max-width: calc(100% - calc(100%/12));
-        flex-basis: calc(100% - calc(100%/12));
-      }
-      
-      .responsive-sm-12 {
-        box-sizing: border-box;
-        max-width: calc(100%);
-        flex-basis: calc(100%);
-      }
-      
+
       .offset-1 {
         margin-left: calc(100%/12);
       }
-      
+
       .offset-2 {
         margin-left: calc(100%/6);
       }
-      
+
       .offset-3 {
         margin-left: calc(100%/4);
       }
-      
+
       .offset-4 {
         margin-left: calc(100%/3);
       }
-      
+
       .offset-5 {
         margin-left: calc(calc(100%/3) + calc(100%/12));
       }
-      
+
       .offset-6 {
         margin-left: calc(100%/2);
       }
-      
+
       .offset-7 {
         margin-left: calc(calc(100%/2) + calc(100%/12));
       }
-      
+
       .offset-8 {
         margin-left: calc(100% - calc(100%/3));
       }
-      
+
       .offset-9 {
         margin-left: calc(100% - calc(100%/4));
       }
-      
+
       .offset-10 {
         margin-left: calc(100% - calc(100%/6));
       }
-      
+
       .offset-11 {
         margin-left: calc(100% - calc(100%/12));
       }
-      
+
       .offset-right {
         margin-left: auto;
       }
-      
-      @media (min-width: 1224px) and (max-width:1824px) {
+
+      .padded-50 {
+        padding: 0 50px;
+      }
+
+      .padded-40 {
+        padding: 0 40px;
+      }
+
+      .padded-30 {
+        padding: 0 30px;
+      }
+
+      .padded-20 {
+        padding: 0 20px;
+      }
+
+      .padded-10 {
+        padding: 0 10px;
+      }
+
+      .padded-50.gutter {
+        padding: 0 25px;
+        margin: 0 25px;
+      }
+
+      .padded-40.gutter {
+        padding: 0 20px;
+        margin: 0 20px;
+      }
+
+      .padded-30.gutter {
+        padding: 0 15px;
+        margin: 0 15px;
+      }
+
+      .padded-20.gutter {
+        padding: 0 10px;
+        margin: 0 10px;
+      }
+
+      .padded-10.gutter {
+        padding: 0 5px;
+        margin: 0 5px;
+      }
+      /*For All*/
+      @media(min-width: 0px) {
         .responsive-xl-1 {
           box-sizing: border-box;
           max-width: calc(100%/12);
           flex-basis: calc(100%/12);
-          padding: 0 10px;
+        }
+
+        .responsive-xl-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+
+        .responsive-xl-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+
+        .responsive-xl-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+
+        .responsive-xl-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+
+        .responsive-xl-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+
+        .responsive-xl-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+
+        .responsive-xl-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+
+        .responsive-xl-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+
+        .responsive-xl-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+
+        .responsive-xl-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+
+        .responsive-xl-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+
+        .responsive-lg-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
+        }
+
+        .responsive-lg-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+
+        .responsive-lg-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+
+        .responsive-lg-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+
+        .responsive-lg-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+
+        .responsive-lg-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+
+        .responsive-lg-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+
+        .responsive-lg-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+
+        .responsive-lg-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+
+        .responsive-lg-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+
+        .responsive-lg-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+
+        .responsive-lg-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+
+        .responsive-md-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
+        }
+
+        .responsive-md-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+
+        .responsive-md-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+
+        .responsive-md-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+
+        .responsive-md-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+
+        .responsive-md-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+
+        .responsive-md-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+
+        .responsive-md-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+
+        .responsive-md-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+
+        .responsive-md-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+
+        .responsive-md-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+
+        .responsive-md-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+
+        .responsive-sm-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
+        }
+
+        .responsive-sm-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+
+        .responsive-sm-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+
+        .responsive-sm-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+
+        .responsive-sm-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+
+        .responsive-sm-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+
+        .responsive-sm-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+
+        .responsive-sm-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+
+        .responsive-sm-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+
+        .responsive-sm-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+
+        .responsive-sm-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+
+        .responsive-sm-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+      }
+      /*For Medium (Tab Portrait / Lanscape)*/
+      @media (min-width: 421px) and (max-width: 768px) {
+        .responsive-xl-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
         }
         .responsive-xl-2 {
           box-sizing: border-box;
           max-width: calc(100%/6);
           flex-basis: calc(100%/6);
-          padding: 0 10px;
         }
         .responsive-xl-3 {
           box-sizing: border-box;
           max-width: calc(100%/4);
           flex-basis: calc(100%/4);
-          padding: 0 10px;
         }
         .responsive-xl-4 {
           box-sizing: border-box;
           max-width: calc(100%/3);
           flex-basis: calc(100%/3);
-          padding: 0 10px;
         }
         .responsive-xl-5 {
           box-sizing: border-box;
           max-width: calc(calc(100%/3) + calc(100%/12));
           flex-basis: calc(calc(100%/3) + calc(100%/12));
-          padding: 0 10px;
         }
         .responsive-xl-6 {
           box-sizing: border-box;
           max-width: calc(100%/2);
           flex-basis: calc(100%/2);
-          padding: 0 10px;
         }
         .responsive-xl-7 {
           box-sizing: border-box;
           max-width: calc(calc(100%/2) + calc(100%/12));
           flex-basis: calc(calc(100%/2) + calc(100%/12));
-          padding: 0 10px;
         }
         .responsive-xl-8 {
           box-sizing: border-box;
           max-width: calc(100% - (100%/3));
           flex-basis: calc(100% - (100%/3));
-          padding: 0 10px;
         }
         .responsive-xl-9 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/4));
           flex-basis: calc(100% - calc(100%/4));
-          padding: 0 10px;
         }
         .responsive-xl-10 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/6));
           flex-basis: calc(100% - calc(100%/6));
-          padding: 0 10px;
         }
         .responsive-xl-11 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/12));
           flex-basis: calc(100% - calc(100%/12));
-          padding: 0 10px;
         }
         .responsive-xl-12 {
           box-sizing: border-box;
           max-width: calc(100%);
           flex-basis: calc(100%);
-          padding: 0 10px;
         }
-      }
-      
-      @media (min-width: 769px) and (max-width:1224px) {
         .responsive-lg-1 {
           box-sizing: border-box;
           max-width: calc(100%/12);
           flex-basis: calc(100%/12);
-          padding: 0 10px;
         }
         .responsive-lg-2 {
           box-sizing: border-box;
           max-width: calc(100%/6);
           flex-basis: calc(100%/6);
-          padding: 0 10px;
         }
         .responsive-lg-3 {
           box-sizing: border-box;
           max-width: calc(100%/4);
           flex-basis: calc(100%/4);
-          padding: 0 10px;
         }
         .responsive-lg-4 {
           box-sizing: border-box;
           max-width: calc(100%/3);
           flex-basis: calc(100%/3);
-          padding: 0 10px;
         }
         .responsive-lg-5 {
           box-sizing: border-box;
           max-width: calc(calc(100%/3) + calc(100%/12));
           flex-basis: calc(calc(100%/3) + calc(100%/12));
-          padding: 0 10px;
         }
         .responsive-lg-6 {
           box-sizing: border-box;
           max-width: calc(100%/2);
           flex-basis: calc(100%/2);
-          padding: 0 10px;
         }
         .responsive-lg-7 {
           box-sizing: border-box;
           max-width: calc(calc(100%/2) + calc(100%/12));
           flex-basis: calc(calc(100%/2) + calc(100%/12));
-          padding: 0 10px;
         }
         .responsive-lg-8 {
           box-sizing: border-box;
           max-width: calc(100% - (100%/3));
           flex-basis: calc(100% - (100%/3));
-          padding: 0 10px;
         }
         .responsive-lg-9 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/4));
           flex-basis: calc(100% - calc(100%/4));
-          padding: 0 10px;
         }
         .responsive-lg-10 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/6));
           flex-basis: calc(100% - calc(100%/6));
-          padding: 0 10px;
         }
         .responsive-lg-11 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/12));
           flex-basis: calc(100% - calc(100%/12));
-          padding: 0 10px;
         }
         .responsive-lg-12 {
           box-sizing: border-box;
           max-width: calc(100%);
           flex-basis: calc(100%);
-          padding: 0 10px;
         }
-      }
-      
-      @media (min-width: 421px) and (max-width: 768px) {
         .responsive-md-1 {
           box-sizing: border-box;
           max-width: calc(100%/12);
           flex-basis: calc(100%/12);
-          padding: 0 5px;
         }
         .responsive-md-2 {
           box-sizing: border-box;
           max-width: calc(100%/6);
           flex-basis: calc(100%/6);
-          padding: 0 5px;
         }
         .responsive-md-3 {
           box-sizing: border-box;
           max-width: calc(100%/4);
           flex-basis: calc(100%/4);
-          padding: 0 5px;
         }
         .responsive-md-4 {
           box-sizing: border-box;
           max-width: calc(100%/3);
           flex-basis: calc(100%/3);
-          padding: 0 5px;
         }
         .responsive-md-5 {
           box-sizing: border-box;
           max-width: calc(calc(100%/3) + calc(100%/12));
           flex-basis: calc(calc(100%/3) + calc(100%/12));
-          padding: 0 5px;
         }
         .responsive-md-6 {
           box-sizing: border-box;
           max-width: calc(100%/2);
           flex-basis: calc(100%/2);
-          padding: 0 5px;
         }
         .responsive-md-7 {
           box-sizing: border-box;
           max-width: calc(calc(100%/2) + calc(100%/12));
           flex-basis: calc(calc(100%/2) + calc(100%/12));
-          padding: 0 5px;
         }
         .responsive-md-8 {
           box-sizing: border-box;
           max-width: calc(100% - (100%/3));
           flex-basis: calc(100% - (100%/3));
-          padding: 0 5px;
         }
         .responsive-md-9 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/4));
           flex-basis: calc(100% - calc(100%/4));
-          padding: 0 5px;
         }
         .responsive-md-10 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/6));
           flex-basis: calc(100% - calc(100%/6));
-          padding: 0 5px;
         }
         .responsive-md-11 {
           box-sizing: border-box;
           max-width: calc(100% - calc(100%/12));
           flex-basis: calc(100% - calc(100%/12));
-          padding: 0 5px;
         }
         .responsive-md-12 {
           box-sizing: border-box;
           max-width: calc(100%);
           flex-basis: calc(100%);
-          padding: 0 5px;
         }
       }
+       /*For Large (PC / ~Notebook 14 inch)*/
+      @media (min-width: 769px) and (max-width:1224px) {
+        .responsive-xl-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
+        }
+        .responsive-xl-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+        .responsive-xl-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+        .responsive-xl-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+        .responsive-xl-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+        .responsive-xl-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+        .responsive-xl-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+        .responsive-xl-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+        .responsive-xl-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+        .responsive-xl-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+        .responsive-xl-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+        .responsive-xl-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+        .responsive-lg-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
+        }
+        .responsive-lg-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+        .responsive-lg-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+        .responsive-lg-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+        .responsive-lg-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+        .responsive-lg-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+        .responsive-lg-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+        .responsive-lg-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+        .responsive-lg-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+        .responsive-lg-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+        .responsive-lg-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+        .responsive-lg-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+      }
+      /*For Extra Large (PC / >Notebook 15 inch)*/
+      @media (min-width: 1224px) and (max-width:1824px) {
+        .responsive-xl-1 {
+          box-sizing: border-box;
+          max-width: calc(100%/12);
+          flex-basis: calc(100%/12);
+        }
+        .responsive-xl-2 {
+          box-sizing: border-box;
+          max-width: calc(100%/6);
+          flex-basis: calc(100%/6);
+        }
+        .responsive-xl-3 {
+          box-sizing: border-box;
+          max-width: calc(100%/4);
+          flex-basis: calc(100%/4);
+        }
+        .responsive-xl-4 {
+          box-sizing: border-box;
+          max-width: calc(100%/3);
+          flex-basis: calc(100%/3);
+        }
+        .responsive-xl-5 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/3) + calc(100%/12));
+          flex-basis: calc(calc(100%/3) + calc(100%/12));
+        }
+        .responsive-xl-6 {
+          box-sizing: border-box;
+          max-width: calc(100%/2);
+          flex-basis: calc(100%/2);
+        }
+        .responsive-xl-7 {
+          box-sizing: border-box;
+          max-width: calc(calc(100%/2) + calc(100%/12));
+          flex-basis: calc(calc(100%/2) + calc(100%/12));
+        }
+        .responsive-xl-8 {
+          box-sizing: border-box;
+          max-width: calc(100% - (100%/3));
+          flex-basis: calc(100% - (100%/3));
+        }
+        .responsive-xl-9 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/4));
+          flex-basis: calc(100% - calc(100%/4));
+        }
+        .responsive-xl-10 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/6));
+          flex-basis: calc(100% - calc(100%/6));
+        }
+        .responsive-xl-11 {
+          box-sizing: border-box;
+          max-width: calc(100% - calc(100%/12));
+          flex-basis: calc(100% - calc(100%/12));
+        }
+        .responsive-xl-12 {
+          box-sizing: border-box;
+          max-width: calc(100%);
+          flex-basis: calc(100%);
+        }
+      }
+
     </style>
   </template>
   <script>
