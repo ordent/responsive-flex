@@ -57,12 +57,18 @@ The flex item that you will use will be based on 12 grid system with calculation
 #### Offset
 Offset is how you could shift the position of the flex item, higher value means the item will be shifted farther. The value will be based on 12 grid system
     <div class="row">
-        <div class="responsive-sm-1 .offset-1"></div>
+        <div class="responsive-sm-1 offset-1"></div>
+    </div>
+
+#### Hidden
+Hidden can be used to hide a section in certain screen. Example: Code below will let you hide the section when users open your application in small devices.
+    <div class="row">
+        <div class="responsive-lg-12 hidden-sm"></div>
     </div>
 
 #### Padding and Gutter
 If you needed, padding and flex-item could be arranged to have padding and gutter. Use padded class to make the item have padding, and use gutter class to make the item have gutter. The value inserted will be the value of padding in pixel. Meanwhile if you use gutter, the value will be divided by 2 and implemented as padding and margin of that particular item.
 
  <div class="row">
-        <div class="responsive-sm-1 .offset-1 padded gutter"></div>
+        <div class="responsive-sm-1 offset-1 padded gutter"></div>
     </div>
